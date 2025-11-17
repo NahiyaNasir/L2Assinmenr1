@@ -7,7 +7,7 @@
 
 ১. ইন্টারফেস   অবজেক্ট  এর  structure বা shape  দেয়ার  জন্য   ব্যাবহার  হয়  ।  এটি শুদু  অবজেক্ট  structure  এর  কাজ  করে ।
 অর্থাৎ, একটি অবজেক্টে কী কী প্রপার্টি থাকবে এবং তাদের টাইপ কী হবে—এটাই ইন্টারফেস দিয়ে বলা হয়।
-  এক্সাম্পল : 
+  এক্সাম্পল 
 interface User {
   name: string;
   age: number;
@@ -22,7 +22,7 @@ _Tuples
 
 __Objects   ।
 
-  এক্সাম্পল : 
+  এক্সাম্পল :
 type ID = string | number;
 type Point = [number, number];
 
