@@ -12,12 +12,10 @@ const formatValue = (a: string | number | boolean) => {
 
 // 2
 const getLength = (value: string | number[]) => {
-  if (typeof value === "string") {
+  if (typeof value === "string" ||Array.isArray(value) ) {
     return value.length;
   }
-  if (Array.isArray(value)) {
-    return value.length;
-  }
+
 };
 
 // 3
@@ -43,20 +41,56 @@ const books = [
   { title: "Book B", rating: 3.2 },
   { title: "Book C", rating: 5.0 },
 ];
+// 5
 
-const users = [
+
+  type User={
+     name:string
+     id:number
+      email:string
+       isActive:boolean
+  }
+    const  filterActiveUsers=(users:User[])=>{
+        return users.filter((user=> user.isActive ===  true))
+    }
+    
+  const users = [
   { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
   { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
   { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
 ];
 
-
-
+console.log(filterActiveUsers(users));
  
  const getUniqueValues=(arr:number[],arr2:number[])=>{
      
  }
-    
+    // 8
+
+    type Product={
+      name:string
+      price:number
+      quantity:number
+       discount?:number
+      
+    }
+     const calculateTotalPrice=(product:Product[])=>{
+         const totalPrice=    product.reduce((acc,p)=>{
+            
+             const discount= p.discount?  p.discount/100 : 0
+              const productCal=p.price*p.quantity * (1-discount)
+            return  acc+ productCal
+        },0)
+         return totalPrice
+     }
+const products = [
+  { name: 'Pen', price: 10, quantity: 2 },
+  { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+  { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+];
+
+console.log(calculateTotalPrice(products));
+     
  
 interface Book {
   title: string;
@@ -66,11 +100,12 @@ interface Book {
 }
 
 const printBookDetails = (myBook: Book) => {
-  console.log(
-    `Title :${myBook.title} Author:${myBook.author} Published Year :${
+ return `Title :${myBook.title} Author:${myBook.author} Published Year :${
       myBook.publishedYear
     } IsAvailable:${myBook.isAvailable ? "Yes" : "No"}`
-  );
+  
+  
+  
 };
 const myBook: Book = {
   title: "The Great Gatsby",
