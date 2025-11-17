@@ -1,5 +1,5 @@
- ## Blog Post
+ # Blog Post
 
- #  What are some differences between interfaces and types in TypeScript?
+ ##  What are some differences between interfaces and types in TypeScript?
  
  
