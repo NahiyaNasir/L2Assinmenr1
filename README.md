@@ -22,7 +22,7 @@ _Tuples
 
 __Objects   ।
 
-  এক্সাম্পল :
+  এক্সাম্পল : :
 type ID = string | number;
 type Point = [number, number];
 
@@ -32,6 +32,7 @@ type Point = [number, number];
 বড় প্রজেক্টে interface extend করা সাধারণত সহজ এবং readable হয়।
 
     এক্সাম্পল : :
+    
 Interface extend:
 interface A { x: number }
 interface B extends A { y: number }
@@ -61,13 +62,14 @@ const person: User = {
 };
 
  Type Merge হয় না:
+ 
 type User = { name: string };
 type User = { age: number }; // ❌ Error
 
 
 ৪.  টাইপ  TypeScript-এর সবচেয়ে শক্তিশালী ফিচারগুলোর সাথে কাজ করে ।Interface এ এসব করা সম্ভব নয়।
 
- এক্সাম্পল :
+ এক্সাম্পল : :
 type Status = "success" | "error";
 type ApiResponse<T> = T extends string ? string : number;
 
