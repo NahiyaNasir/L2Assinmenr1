@@ -82,7 +82,7 @@ type Status = "success" | "error";
 type ApiResponse<T> = T extends string ? string : number;
  ```
 
-  সারমর্ম :TypeScript-এ interface এবং type দুটোই গুরুত্বপূর্ণ।
+  📌সারমর্ম :TypeScript-এ interface এবং type দুটোই গুরুত্বপূর্ণ।
 অবজেক্ট   এ  structure  এর  জন্য  ইন্টারফেস    use  করা  ভালো ।
 Primitive values (string, number, boolean)  
 Functions
@@ -94,3 +94,57 @@ Objects type use  করা  ভালো ।
  ##  What is the use of the keyof keyword in TypeScript? Provide an example.
 
 
+## 
+
+ ## keyof হলো TypeScript-এর একটি powerful operator, যা কোনো type-এর সব property-র keysএকটি union type হিসেবে রিটার্ন করে।
+
+  keyof দিয়ে  কোনো object type-এর সব key-এর list  পাওয়া  যায় । Generic utility functions তৈরি করতে খুব কাজে লাগে।
+
+ যেমনঃ 
+ ```ts
+ interface User {
+  name: string;
+  age: number;
+  active: boolean;
+}
+
+function getProp<T, K extends keyof T>(obj: T, key: K) {
+  return obj[key];
+}
+
+const user: User = { name: "mahi", age: 20, active: true };
+
+const result = getProp(user, "name"); // ✔ Works
+// getProp(user, "email"); ❌ Error (কারণ email key নেই)
+```
+  🟣এখানে
+K extends keyof T মানে key অবশ্যই object-এর কোনো property হতে হবে।
+
+
+  🔷keyof দিয়ে mapped type:
+
+ input :
+```ts
+type UserType = {
+  name: string;
+  age: number;
+};
+
+type Stringified<T> = {
+  [K in keyof T]: string;
+};
+
+type NewType = Stringified<UserType>;
+Output:
+type NewType = {
+  name: string;
+  age: string;
+}
+```
+📌 সারমর্ম
+
+keyof কোনো object type-এর key name গুলোকে union হিসেবে দেয়
+
+ভুল key ব্যবহার বন্ধ করে।
+
+Generic function, utility type, mapped type—এসব ক্ষেত্রে   keyOf  use  করা হয় ।
