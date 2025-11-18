@@ -1,3 +1,6 @@
+
+## 
+
  # Blog Post
 
  ##  What are some differences between interfaces and types in TypeScript?
@@ -34,7 +37,9 @@ type Point = [number, number];
 
 বড় প্রজেক্টে interface extend করা সাধারণত সহজ এবং readable হয়।
   উদাহরণ:
-    ```ts
+
+  ```ts
+
 Interface extend:
 interface A { x: number }
 interface B extends A { y: number }
@@ -77,11 +82,8 @@ type Status = "success" | "error";
 type ApiResponse<T> = T extends string ? string : number;
  ```
 
-  সারমর্ম :
-  TypeScript-এ interface এবং type দুটোই গুরুত্বপূর্ণ।
+  সারমর্ম :TypeScript-এ interface এবং type দুটোই গুরুত্বপূর্ণ।
 অবজেক্ট   এ  structure  এর  জন্য  ইন্টারফেস    use  করা  ভালো ।
-
-
 Primitive values (string, number, boolean)  
 Functions
 Tuples
@@ -90,3 +92,5 @@ Objects type use  করা  ভালো ।
 ---------
 
  ##  What is the use of the keyof keyword in TypeScript? Provide an example.
+
+
