@@ -94,10 +94,8 @@ Objects type use  করা  ভালো ।
  ##  What is the use of the keyof keyword in TypeScript? Provide an example.
 
 
-## 
 
- ## keyof হলো TypeScript-এর একটি powerful operator, যা কোনো type-এর সব property-র keysএকটি union type হিসেবে রিটার্ন করে।
-
+  keyof হলো TypeScript-এর একটি powerful operator, যা কোনো type-এর সব property-র keysএকটি union type হিসেবে রিটার্ন করে।
   keyof দিয়ে  কোনো object type-এর সব key-এর list  পাওয়া  যায় । Generic utility functions তৈরি করতে খুব কাজে লাগে।
 
  যেমনঃ 
